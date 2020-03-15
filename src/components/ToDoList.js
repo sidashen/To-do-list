@@ -25,7 +25,7 @@ class ToDoList extends Component {
     ));
     return (
       <div className='list-area'>
-        <button onClick={this.addItem} className='add'>Add</button>
+        <button onClick={() => this.addItem()} className='add'>Add</button>
         <ul className='list-content'>
           {listItemsDom}
         </ul>
