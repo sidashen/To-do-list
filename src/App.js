@@ -26,7 +26,7 @@ class App extends React.Component {
           {this.state.isShow ? 'Hide' : 'Show'}
         </button>
         <button onClick={this.refresh}>Refresh</button>
-        {/* <div>{this.state.isShow && <ToDoList />}</div> */}
+        {/* { this.state.isShow ? <ToDoList /> : this.clear } */}
       </div>
     );
   }
