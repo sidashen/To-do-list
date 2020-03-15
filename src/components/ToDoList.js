@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { Component } from 'react';
 import '../styles/ToDoList.css';
 
-class ToDoList extends React.Component {
+class ToDoList extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -11,22 +11,22 @@ class ToDoList extends React.Component {
   }
 
   addItem = () => {
-    let inputValue = 'List Title' + this.state.index;
+    const { index, listItems } = this.state;
+    let inputValue = 'List Title' + index;
     this.setState({
-      listItems: [...this.state.listItems, inputValue],
-      index: this.state.index + 1
+      listItems: [...listItems, inputValue],
+      index: index + 1
     });
   }
 
   render() {
     const listItemsDom = this.state.listItems.map((value, index) => (
-      <li key={index}>{value}</li>
+      <li key={index} className='single-list'>{value}</li>
     ));
-    console.log(this.state.listItems);
     return (
-      <div>
-        <button onClick={this.addItem}>Add</button>
-        <ul>
+      <div className='list-area'>
+        <button onClick={this.addItem} className='add'>Add</button>
+        <ul className='list-content'>
           {listItemsDom}
         </ul>
       </div>
