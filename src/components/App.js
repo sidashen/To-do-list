@@ -10,13 +10,13 @@ class App extends React.Component {
     this.refresh = this.refresh.bind(this);
   }
 
-  toggle() {
+  toggle = () => {
     this.setState(state => ({
       isShow: !state.isShow
     }));
   }
 
-  refresh() {
+  refresh = () => {
     window.location.reload();
   }
 
