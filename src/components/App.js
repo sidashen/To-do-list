@@ -1,5 +1,6 @@
 import React from 'react';
-import './App.css';
+import '../styles/App.css';
+import ToDoList from './ToDoList';
 
 class App extends React.Component {
   constructor(props) {
@@ -26,7 +27,7 @@ class App extends React.Component {
           {this.state.isShow ? 'Hide' : 'Show'}
         </button>
         <button onClick={this.refresh}>Refresh</button>
-        {/* { this.state.isShow ? <ToDoList /> : this.clear } */}
+        {this.state.isShow ? <ToDoList /> : this.clear}
       </div>
     );
   }
