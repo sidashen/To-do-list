@@ -5,22 +5,28 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = { isShow: false };
-    this.handleClick = this.handleClick.bind(this);
+    this.toggle = this.toggle.bind(this);
+    this.refresh = this.refresh.bind(this);
   }
 
-  handleClick() {
+  toggle() {
     this.setState(state => ({
       isShow: !state.isShow
     }));
   }
 
+  refresh() {
+    window.location.reload();
+  }
+
   render() {
     return (
       <div>
-        <button onClick={this.handleClick}>
+        <button onClick={this.toggle}>
           {this.state.isShow ? 'Hide' : 'Show'}
         </button>
-        <div>{this.state.isShow && <ToDoList />}</div>
+        <button onClick={this.refresh}>Refresh</button>
+        {/* <div>{this.state.isShow && <ToDoList />}</div> */}
       </div>
     );
   }
