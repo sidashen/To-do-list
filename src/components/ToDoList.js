@@ -8,6 +8,7 @@ class ToDoList extends Component {
       listItems: [],
       index: 1
     };
+    console.log('This is constructor');
   }
 
   addItem = () => {
@@ -19,7 +20,21 @@ class ToDoList extends Component {
     });
   }
 
+
+  componentDidMount = () => {
+    console.log('This is componentDidMount');
+  }
+
+  componentDidUpdate = () => {
+    console.log('This is componentDidUpdate');
+  }
+
+  componentWillUnmount = () => {
+    console.log('This is componentWillUnmount');
+  }
+
   render() {
+    console.log('This is render');
     const listItemsDom = this.state.listItems.map((value, index) => (
       <li key={index} className='single-list'>{value}</li>
     ));
